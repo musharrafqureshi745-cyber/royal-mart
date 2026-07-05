@@ -7,7 +7,7 @@ const toast = document.querySelector("#toast");
 const toastMessage = document.querySelector("#toast-message");
 const savedCount = document.querySelector("#saved-count");
 
-const BUSINESS_WHATSAPP = "919117865343";
+const BUSINESS_WHATSAPP = "917697346497";
 
 const icons = {
   arrow: '<path d="M5 12h14M13 6l6 6-6 6"/>',
