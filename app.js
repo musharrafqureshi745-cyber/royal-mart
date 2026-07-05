@@ -85,7 +85,7 @@ function button(label, href, variant = "button-dark") {
 function homeTemplate() {
   return `
     <section class="home-hero">
-      <img class="hero-image" src="/assets/talbina-hero.jpg" alt="A warm bowl of Royal Mart Talbina with almonds, pistachios and dates" />
+      <img class="hero-image" src="/assets/talbina-hero.jpg?v=3" alt="A warm bowl of Royal Mart Talbina with almonds, pistachios and dates" />
       <div class="hero-content">
         <p class="eyebrow eyebrow-badge">One place for everyday needs</p>
         <h1>Wellness for your table. <em>Wheels</em> for your journey.</h1>
@@ -228,7 +228,7 @@ const bikeListings = [
     subtitle: "A powerful and comfortable everyday ride",
     tag: "Sport bike",
     category: "sport",
-    image: "/assets/bike-pulsar.jpg",
+    image: "/assets/bike-pulsar.jpg?v=3",
     price: "₹500 / 12 hours",
     monthly: "₹5,500 monthly",
     meta: [["shield", "No deposit"], ["user", "Licence required"], ["pin", "Pickup near VIT"]]
@@ -238,7 +238,7 @@ const bikeListings = [
     subtitle: "Efficient and practical for regular travel",
     tag: "Commuter",
     category: "commuter",
-    image: "/assets/bike-platina.jpg",
+    image: "/assets/bike-platina.jpg?v=3",
     price: "₹350 / 12 hours",
     monthly: "₹4,500 monthly",
     meta: [["shield", "No deposit"], ["user", "Licence required"], ["pin", "Pickup near VIT"]]
@@ -248,7 +248,7 @@ const bikeListings = [
     subtitle: "Simple, light and convenient for local rides",
     tag: "Easy ride",
     category: "scooter",
-    image: "/assets/bike-scooty.jpg",
+    image: "/assets/bike-scooty.jpg?v=3",
     price: "₹350 / 12 hours",
     monthly: "₹4,000 monthly",
     meta: [["shield", "No deposit"], ["user", "Licence required"], ["pin", "Pickup near VIT"]]
@@ -423,7 +423,7 @@ function listingCards(type, listings) {
         <button class="save-button" type="button" data-save="${type}-${index}" aria-label="Save ${item.name}">${icon("bookmark")}</button>
         ${type === "bike"
           ? `<img class="listing-vehicle-image" src="${item.image}" alt="${item.name} available for rent from Royal Mart" loading="lazy" />`
-          : `<img class="listing-vehicle-image" src="${index % 2 === 0 ? "/assets/cab-swift.jpg" : "/assets/cab-ertiga.jpg"}" data-original-src="${index % 2 === 0 ? "/assets/cab-swift.jpg" : "/assets/cab-ertiga.jpg"}" alt="${index % 2 === 0 ? "Swift-style" : "Ertiga-style"} Royal Mart cab for ${item.name}" loading="lazy" />`}
+          : `<img class="listing-vehicle-image" src="${index % 2 === 0 ? "/assets/cab-swift.jpg?v=3" : "/assets/cab-ertiga.jpg?v=3"}" data-original-src="${index % 2 === 0 ? "/assets/cab-swift.jpg?v=3" : "/assets/cab-ertiga.jpg?v=3"}" alt="${index % 2 === 0 ? "Swift-style" : "Ertiga-style"} Royal Mart cab for ${item.name}" loading="lazy" />`}
       </div>
       <div class="listing-body">
         <div class="listing-title-row"><div><h3>${item.name}</h3><span class="listing-subtitle">${item.subtitle}</span></div><span class="rating">OPEN 24/7</span></div>
@@ -491,7 +491,7 @@ function talbinaTemplate() {
   return `
     <div class="talbina-page">
       <section class="page-hero">
-        <img class="page-hero-bg" src="/assets/talbina-hero.jpg" alt="Creamy Talbina with nuts and dates" />
+        <img class="page-hero-bg" src="/assets/talbina-hero.jpg?v=3" alt="Creamy Talbina with nuts and dates" />
         <div class="page-shell page-hero-inner">
           <div class="page-hero-copy reveal">
             <p class="eyebrow eyebrow-badge">Royal Mart wellness</p>
@@ -507,7 +507,7 @@ function talbinaTemplate() {
       <section class="product-section" id="discover">
         <div class="section-shell product-grid">
           <div class="product-image reveal">
-            <img src="/assets/talbina-hero.jpg" alt="A nourishing bowl of Talbina topped with almonds and pistachios" />
+            <img src="/assets/talbina-hero.jpg?v=3" alt="A nourishing bowl of Talbina topped with almonds and pistachios" />
             <div class="product-badge"><strong>Wholesome comfort</strong><span>Simple ingredients · Warmly satisfying</span></div>
           </div>
           <div class="product-copy reveal">
@@ -695,14 +695,14 @@ function setCabCardVehicle(card, cabType) {
   if (!image || !label || !bookingButton) return;
 
   if (cabType === "swift") {
-    image.src = "/assets/cab-swift.jpg";
+    image.src = "/assets/cab-swift.jpg?v=3";
     image.alt = `Swift-style Royal Mart cab for ${card.querySelector("h3")?.textContent || "this route"}`;
     label.textContent = "Swift";
     bookingButton.dataset.item = `${bookingButton.dataset.baseItem} — Swift`;
     return;
   }
   if (cabType === "ertiga") {
-    image.src = "/assets/cab-ertiga.jpg";
+    image.src = "/assets/cab-ertiga.jpg?v=3";
     image.alt = `Ertiga-style Royal Mart cab for ${card.querySelector("h3")?.textContent || "this route"}`;
     label.textContent = "Ertiga";
     bookingButton.dataset.item = `${bookingButton.dataset.baseItem} — Ertiga`;
